@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso de JS</title>
+    </head>
+    <body>
+
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="index.js"></script>
+        <script>
+            function checaIdade(id){
+                return new Promise(function(resolve, reject) {
+                    if (id > 17) {
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                })
+            }
+
+            checaIdade(15)
+            .then(function() {
+                console.log("Maior que 18");
+            })
+            .catch(function() {
+                console.log("Menor que 18");
+            });
+            
+        </script>
+    </body>
+</html>

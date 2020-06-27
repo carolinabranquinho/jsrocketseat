@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <!--Aula 
+    <body>
+        <div id="app">
+            <input type="text" name="nome" id="nome" />
+            <button class="botao">Adicionar</button>
+        </div>
+
+        <div id="link">
+
+        </div>
+
+
+        <script>
+            var inputElement = document.getElementById("nome");
+            var inputArray = document.getElementsByTagName("input");
+            var inputText = document.querySelector("input[name=nome]");
+
+            var btnElement = document.querySelector('button.botao');
+            btnElement.onclick = function() {
+                var text = inputText.value;
+                alert(text);
+                alert('Botão clicado');
+            }
+
+
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href', 'http://rocketseat.com.br');
+
+            var textElement = document.createTextNode('Acessar site da Rocketseat');
+            linkElement.appendChild(textElement);
+
+            var containerElement = document.querySelector('#link');
+            containerElement.appendChild(linkElement);
+        </script>
+    </body>
+    -->
+
+    <!--Exercicios-->
+    <body>
+        <div id="app">
+            <button class="botao">Quadrado Vermelho</button>
+        </div>
+
+        <div id="lista">
+            <ul class="lista"></ul>
+        </div>
+
+        <script>
+
+            var inputQuadrado = document.querySelector('button.botao');
+
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            
+            inputQuadrado.onclick = function(){
+
+                var quadrado = document.createElement('div');
+                quadrado.style.width = 100;
+                quadrado.style.height = 100;
+                quadrado.style.margin = 10;
+                quadrado.style.backgroundColor = '#f00';
+                quadrado.classList.add('quadrado');
+
+                quadrado.onmouseover = function () {
+                    quadrado.style.backgroundColor = getRandomColor();
+                }
+
+                document.body.appendChild(quadrado);
+            }
+
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            for (var names in nomes) {
+                var item = document.createElement('li');
+                var textElement = document.createTextNode(nomes[names]);
+
+                item.appendChild(textElement);
+
+                document.body.appendChild(item);
+            }
+
+            function adicionar() {
+                var inputText = document.querySelector('input[name=nome]');
+                var name = document.createTextNode(inputText.value);
+                var item_lista = document.createElement('li');
+
+                item_lista.appendChild(name);
+                inputText.value=""
+                document.body.appendChild(item_lista);
+            }
+        </script>
+
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+
+    </body>
+
+</html>

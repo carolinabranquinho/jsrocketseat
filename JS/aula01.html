@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Curso JS - Rocketseat</title>
+    </head>
+    <body>
+
+
+
+        <!--Colocar no final do body, execução vertical, logo é melhor submeter o script após a criação de toda tela -->
+        <script>
+
+            var endereco = {
+                rua: 'Rua dos Pinheiros',
+                numero: 1293,
+                bairro: 'Centro',
+                cidade: 'São Paulo',
+                uf: 'SP'
+            };
+
+            function formatacao(arr){
+                var resposta = `O usuário mora em ${arr.cidade}/${arr.uf}, no bairo ${arr.bairro}, na rua "${arr.rua}" com nº ${arr.numero}.` 
+                return resposta
+            }
+
+            function pares (x, y) {
+                var arr = [];
+
+                for (i = x; i<=y; i++){
+                    if (i%2 == 0){
+                        arr.push(i)
+                    }
+                }
+
+                return arr
+            }
+
+            function temHabilidade(arr){
+                var index = arr.indexOf('Javascript');
+
+                return index===-1 ? false : true
+            }
+
+            var skills = ['Javascript', 'ReactJS', 'ReactNative'];
+
+
+            function experiencia (anos) {
+                switch(anos){
+                    case 0:
+                    case 1:
+                        return 'Iniciante'
+                    case 2:
+                    case 3:
+                        return 'Intermediário'
+                    case 4:
+                    case 5:
+                    case 6:
+                        return 'Avançado'
+                    default:
+                        return 'Jedi Master'
+                }
+            }
+
+            var usuarios = [
+                {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+
+            function object(obj) {
+                var arr = [];
+                for(let entry of usuarios){
+                    var habilidades = entry.habilidades.join([separador = ', ']);
+                    arr.push(`O ${entry.nome} possui as habilidades: ${habilidades}`)
+                }
+                
+                return arr;
+            }
+
+            //onde fica o JS
+        </script>
+    </body>
+</html>
